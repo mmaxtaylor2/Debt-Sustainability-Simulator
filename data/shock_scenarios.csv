@@ -1,0 +1,5 @@
+scenario,rate_spike,recession,fiscal_slippage
+Baseline,0.00,0.00,0.00
+Recession,0.50,0.02,0.01
+Rate Spike,0.02,0.00,0.00
+IMF Program,-0.005,-0.01,-0.02
