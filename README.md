@@ -1,51 +1,72 @@
-# Debt Sustainability Simulator
+## Debt Sustainability Simulator
 
-This project models sovereign Debt/GDP dynamics and stress scenarios,
-similar to the tools used by IMF and World Bank country teams.
+A Python-based simulator for sovereign debt dynamics, inspired by frameworks used by IMF and World Bank country teams.
 
-It focuses on:
-- Debt/GDP projections under baseline assumptions
-- Interest-growth dynamics (r versus g)
-- Primary balance paths
-- Shock scenarios such as recessions and rate spikes
-- Simple risk classifications (Stable, Vulnerable, Unsustainable)
+It models Debt/GDP paths under baseline assumptions and stress scenarios such as recessions, interest rate spikes, and fiscal reform programs.
 
-## How it works
+## Overview
 
-The core identity is:
-
+The simulator applies the standard debt sustainability identity:
 Debt(t+1) = Debt(t) + (r - g) * Debt(t) - PrimaryBalance(t)
 
-All variables are expressed as percentages of GDP:
-- Debt is Debt/GDP
-- r is the effective interest rate on debt
-- g is nominal GDP growth
-- Primary balance is the government's fiscal position (surplus or deficit)
+Where:
 
-Baseline assumptions and shock parameters are stored in CSV files in the
-`data/` folder. The Python models read these inputs and generate Debt/GDP
-paths over time.
+Debt/GDP is the public debt ratio
+r is the effective interest rate
+g is nominal GDP growth
+PrimaryBalance is the fiscal position (surplus or deficit)
 
-## Running the CLI simulator
+Shock scenarios adjust these variables to demonstrate how debt evolves under stress conditions.
 
-From the project root:
+## Key Features
 
-    python3 ui/cli_simulator.py
+Baseline debt projection over time
+Recession, rate spike, and IMF program scenarios
+Command-line interface for fast evaluation
+Streamlit dashboard for visualization
+Simple classification of outcomes: Stable, Vulnerable, Unsustainable
+Modular structure for future expansion
 
-You can then choose between baseline and different shock scenarios
-(e.g., recession, rate spike, IMF program) and see the resulting
-Debt/GDP trajectory and a simple risk label.
+## Why This Project Matters
 
-## Running the Streamlit dashboard
+This tool reflects core concepts used in sovereign debt sustainability analysis:
 
-If you have Streamlit installed:
+Interest-growth dynamics (r vs g)
+Primary balance adjustments
+Stress testing and scenario overlays
+Threshold-based risk classification
 
-    streamlit run ui/dashboards_streamlit.py
+It is useful for:
 
-The dashboard lets you:
-- Adjust initial Debt/GDP and a risk threshold
-- Switch between scenarios
-- Visualize the Debt/GDP path over time
+Economic policy and risk analysis practice
+Internship and analyst recruiting portfolios
+Building intuition for sovereign credit and macro-fiscal vulnerabilities
 
-This project is designed to showcase sovereign risk analysis and
-debt sustainability skills for entry-level macro and policy roles.
+## Installation
+
+Clone the repository:
+
+git clone https://github.com/mmaxtaylor2/Debt-Sustainability-Simulator.git
+cd Debt-Sustainability-Simulator
+
+Install dependencies:
+
+pip install -r requirements.txt
+
+## Running the Simulator
+
+CLI Version
+
+python3 -m ui.cli_simulator
+
+Streamlit Dashboard
+
+streamlit run ui/dashboards_streamlit.py
+
+## Repository Structure
+
+data/                # Baseline and shock assumptions
+models/              # Debt projection and scenario engines
+ui/                  # CLI and Streamlit dashboard
+requirements.txt     # Python dependencies
+README.md            # Documentation
