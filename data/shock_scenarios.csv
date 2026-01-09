@@ -1,0 +1,4 @@
+Scenario,Growth_Shock,Interest_Shock,Primary_Shock
+Baseline,2,4,-2
+Mild Shock,1,5,-2
+Severe Shock,-1,7,-3
